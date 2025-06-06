@@ -1,0 +1,49 @@
+@use 'src/styles/utils' as *;
+
+.footer {
+  padding-block: 32px;
+  border-top: 1px solid var(--color-element-border);
+
+  @include page-grid;
+  @include responsive-padding-inline;
+
+  &__nav {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    row-gap: 32px;
+
+    @include on-tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    & > *:last-child {
+      align-self: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 33%;
+    }
+  }
+
+  &__link {
+    @extend %text-uppercase;
+
+    color: var(--color-text-secondary);
+    transition: color $transition-duration-base ease-in-out;
+
+    &:hover {
+      color: var(--color-text-primary);
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@use 'src/styles/utils' as *;
+
+.products-page {
+  @include page-grid;
+  @include responsive-padding-inline;
+
+  &__breadcrumbs {
+    grid-column: 1 / -1;
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    margin-bottom: 64px;
+
+    @include on-desktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
+  }
+
+  &__message {
+    color: var(--color-text-primary);
+  }
+
+  &__amount {
+    @extend %text-body;
+
+    margin-bottom: 32px;
+    color: var(--color-text-secondary);
+
+    &--loading {
+      width: 10ch;
+      height: 1lh;
+
+      @include skeleton-loader;
+    }
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__filters {
+    margin-bottom: 24px;
+  }
+
+  &__list {
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+  }
+}

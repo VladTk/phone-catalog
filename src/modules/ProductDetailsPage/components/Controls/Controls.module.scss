@@ -1,0 +1,231 @@
+@use 'src/styles/utils' as *;
+
+.controls {
+  &__colors {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-element-secondary);
+  }
+
+  &__sub-title {
+    @extend %text-small;
+
+    color: var(--color-text-secondary);
+
+    &--loading {
+      width: 10ch;
+      height: 1lh;
+
+      @include skeleton-loader;
+    }
+  }
+
+  &__capacities {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-element-secondary);
+  }
+
+  &__prices {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 41px;
+    color: var(--color-text-primary);
+
+    &--discount {
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 30px;
+      color: var(--color-text-secondary);
+      text-decoration: line-through;
+      text-decoration-color: var(--color-text-secondary);
+      text-decoration-thickness: 2px;
+    }
+
+    &--loading {
+      width: 6ch;
+      height: 1lh;
+
+      @include skeleton-loader;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    column-gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  &__cart-btn {
+    flex: 1;
+
+    &--loading {
+      @include skeleton-loader;
+    }
+  }
+
+  &__fav-btn {
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+
+    &--loading {
+      @include skeleton-loader;
+    }
+  }
+}
+
+.colors {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color-element-border);
+    border-radius: 50%;
+
+    transition: border-color $transition-duration-base ease-in-out;
+
+    &--active {
+      pointer-events: none;
+      cursor: default;
+      border-color: var(--color-element-border-hover);
+    }
+
+    &--loading {
+      pointer-events: none;
+      cursor: default;
+      border: none;
+
+      @include skeleton-loader;
+    }
+
+    &:hover {
+      border-color: var(--color-element-border-hover);
+    }
+  }
+
+  &__circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+}
+
+.capacities {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 32px;
+    padding-inline: 8px;
+    border: 1px solid var(--color-text-radio-border);
+
+    color: var(--color-text-radio);
+
+    background-color: var(--color-text-radio-bg);
+
+    transition:
+      border-color $transition-duration-base ease-in-out,
+      background-color $transition-duration-base ease-in-out;
+
+    &:hover {
+      border-color: var(--color-text-radio-border-hover);
+    }
+
+    &--active {
+      pointer-events: none;
+      cursor: default;
+
+      border-color: var(--color-text-radio-border-active);
+
+      color: var(--color-text-radio-active);
+
+      background-color: var(--color-text-radio-bg-active);
+    }
+
+    &--loading {
+      pointer-events: none;
+      cursor: default;
+      width: 4ch;
+      border: none;
+
+      @include skeleton-loader;
+    }
+  }
+}
+
+.info {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  &__item {
+    display: flex;
+    column-gap: 24px;
+    justify-content: space-between;
+  }
+
+  &__property {
+    @extend %text-small;
+
+    color: var(--color-text-secondary);
+
+    &--loading {
+      width: 15ch;
+      height: 1lh;
+
+      @include skeleton-loader;
+    }
+  }
+
+  &__value {
+    @extend %text-small;
+
+    color: var(--color-text-primary);
+    text-align: right;
+
+    &--loading {
+      width: 25ch;
+      height: 1lh;
+
+      @include skeleton-loader;
+    }
+  }
+}

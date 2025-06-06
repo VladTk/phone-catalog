@@ -1,0 +1,92 @@
+@use 'src/styles/utils' as *;
+
+.pictures-slider {
+  row-gap: 8px;
+
+  @include page-grid;
+
+  &__button {
+    display: none;
+    grid-column: span 1;
+
+    width: 32px;
+    border: 1px solid var(--color-icon-border);
+
+    background-color: var(--color-icon-bg);
+
+    transition:
+      border-color $transition-duration-base ease-in-out,
+      background-color $transition-duration-base ease-in-out;
+
+    @include on-tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(189px / 640px * 100vw);
+    }
+
+    @include on-desktop {
+      height: 400px;
+    }
+
+    &:hover {
+      border-color: var(--color-icon-border-hover);
+      background-color: var(--color-icon-bg-hover);
+    }
+
+    &--left {
+      justify-self: end;
+    }
+
+    &--right {
+      justify-self: start;
+    }
+  }
+
+  &__icon {
+    color: var(--color-icon-primary);
+  }
+
+  &__wrapper {
+    cursor: grab;
+    user-select: none;
+    overflow: hidden;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+    }
+
+    &--dragging {
+      cursor: grabbing;
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.3s ease-in-out;
+
+    @include on-tablet {
+      aspect-ratio: auto;
+      height: calc(189px / 640px * 100vw);
+    }
+
+    @include on-desktop {
+      height: 400px;
+    }
+  }
+
+  &__item {
+    flex: 0 0 100%;
+    height: 100%;
+  }
+
+  &__indicators {
+    grid-column: 1 / -1;
+  }
+}

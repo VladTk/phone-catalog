@@ -1,0 +1,96 @@
+@use 'src/styles/utils' as *;
+
+.dropdown {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  width: 100%;
+
+  &__label {
+    @extend %text-small;
+
+    color: var(--color-text-secondary);
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid var(--color-field-border);
+
+    color: var(--color-text-primary);
+
+    background-color: var(--color-field-bg);
+
+    transition: border-color $transition-duration-base ease-in-out;
+
+    &:hover {
+      border-color: var(--color-field-border-hover);
+    }
+
+    &:focus {
+      border-color: var(--color-field-border-focus);
+    }
+
+    &--active {
+      border-color: var(--color-field-border-focus);
+    }
+  }
+
+  &__icon {
+    transition: transform $transition-duration-base ease-in-out ;
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 4px;
+    padding-block: 8px;
+    border: 1px solid var(--color-field-border);
+
+    visibility: hidden;
+    opacity: 0;
+    background-color: var(--color-bg);
+
+    transition:
+      transform $transition-duration-base ease-in-out,
+      opacity $transition-duration-base ease-in-out;
+
+    &--active {
+      transform: scaleY(1);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    padding: 6px 12px;
+    color: var(--color-text-secondary);
+    transition:
+      color $transition-duration-base ease-in-out,
+      background-color $transition-duration-base ease-in-out;
+
+    &:hover {
+      color: var(--color-text-primary);
+      background-color: var(--color-field-bg);
+    }
+  }
+}

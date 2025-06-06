@@ -1,0 +1,51 @@
+@use 'src/styles/utils' as *;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+
+  &__title {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-element-secondary);
+    color: var(--color-text-primary);
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__sub-title {
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--color-text-primary);
+
+    @include on-tablet {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    &--loading {
+      width: 15ch;
+      max-width: 100%;
+      height: 1lh;
+
+      @include skeleton-loader;
+    }
+  }
+
+  &__text {
+    @extend %text-body;
+
+    color: var(--color-text-secondary);
+
+    &--loading {
+      width: 100%;
+      height: 4lh;
+
+      @include skeleton-loader;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@use 'src/styles/utils' as *;
+
+.cart-page {
+  @include page-grid;
+  @include responsive-padding-inline;
+
+  &__content {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+  }
+
+  &__back-button {
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__message {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-bottom: 32px;
+    color: var(--color-text-primary);
+  }
+
+  &__list {
+    grid-column: 1 / -1;
+    margin-bottom: 32px;
+
+    @include on-desktop {
+      grid-column: span 16;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__summary {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    row-gap: 16px;
+    align-items: center;
+    justify-content: center;
+
+    height: fit-content;
+    margin-bottom: 56px;
+    padding: 24px;
+    border: 1px solid var(--color-element-secondary);
+
+    @include on-tablet {
+      margin-bottom: 64px;
+    }
+
+    @include on-desktop {
+      grid-column: span 8;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--loading {
+      row-gap: 4px;
+    }
+  }
+
+  &__total-price {
+    @extend %mont-bold;
+
+    font-size: 22px;
+    line-height: 31px;
+    color: var(--color-text-primary);
+    letter-spacing: 0;
+
+    @include on-tablet {
+      font-size: 32px;
+      line-height: 41px;
+    }
+
+    &--loading {
+      width: 10ch;
+      height: calc(1lh - 4px);
+
+      @include skeleton-loader;
+    }
+  }
+
+  &__total-quantity {
+    @extend %text-body;
+
+    color: var(--color-text-secondary);
+
+    &--loading {
+      width: 20ch;
+      height: 1lh;
+
+      @include skeleton-loader;
+    }
+  }
+
+  &__decor {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-element-secondary);
+  }
+
+  &__checkout-btn {
+    @extend %text-body;
+
+    width: 100%;
+    height: 48px;
+
+    color: var(--color-button-text);
+
+    background-color: var(--color-button-bg);
+
+    transition: filter $transition-duration-base ease-in-out;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}

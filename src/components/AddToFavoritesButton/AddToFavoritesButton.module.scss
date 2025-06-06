@@ -1,0 +1,29 @@
+@use 'src/styles/utils' as *;
+
+.add-to-fav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-icon-border);
+
+  color: var(--color-icon-primary);
+
+  background-color: var(--color-icon-bg);
+
+  transition: all $transition-duration-base ease-in-out;
+
+  &:hover {
+    border-color: var(--color-icon-border-hover);
+    background-color: var(--color-icon-bg-hover);
+  }
+
+  &__heart-icon {
+    &--active {
+      color: var(--color-red);
+    }
+  }
+}

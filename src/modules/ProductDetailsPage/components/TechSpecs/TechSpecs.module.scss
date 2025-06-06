@@ -1,0 +1,53 @@
+@use 'src/styles/utils' as *;
+
+.tech-specs {
+  &__title {
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-element-secondary);
+    color: var(--color-text-primary);
+
+    @include on-tablet {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  &__item {
+    display: flex;
+    column-gap: 24px;
+    justify-content: space-between
+  }
+
+  &__property{
+    @extend %text-body;
+
+    color: var(--color-text-secondary);
+
+    &--loading {
+      width: 20ch;
+      height: 1lh;
+
+      @include skeleton-loader;
+    }
+  }
+
+  &__value {
+    @extend %text-body;
+
+    color: var(--color-text-primary);
+    text-align: right;
+
+    &--loading {
+      width: 30ch;
+      height: 1lh;
+
+      @include skeleton-loader;
+    }
+  }
+}

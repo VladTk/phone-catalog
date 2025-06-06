@@ -1,0 +1,59 @@
+@use 'src/styles/utils' as *;
+
+.favorites {
+  @include page-grid;
+  @include responsive-padding-inline;
+
+  &__breadcrumbs {
+    grid-column: 1 / -1;
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+  }
+
+  &__empty {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
+  }
+
+  &__amount {
+    @extend %text-body;
+
+    margin-bottom: 32px;
+    color: var(--color-text-secondary);
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    &--loading {
+      width: 10ch;
+      height: 1lh;
+
+      @include skeleton-loader;
+    }
+  }
+
+  &__list {
+    margin-bottom: 56px;
+
+    @include on-tablet {
+      margin-bottom: 64px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 80px;
+    }
+  }
+}

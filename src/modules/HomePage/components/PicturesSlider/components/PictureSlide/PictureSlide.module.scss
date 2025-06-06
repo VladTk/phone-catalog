@@ -1,0 +1,112 @@
+@use 'src/styles/utils' as *;
+
+.picture-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--color-hero-gradient-start);
+  background: radial-gradient(circle, var(--color-hero-gradient-start) 0%, var(--color-hero-gradient-end) 100%);
+
+  @include on-tablet {
+    flex-direction: row;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 20%;
+    padding-top: 10px;
+
+    @include on-tablet {
+      row-gap: 20px;
+      width: 50%;
+      height: 100%;
+    }
+
+    @include on-desktop {
+      row-gap: 80px;
+      width: 40%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__title {
+    @extend %mont-bold;
+
+    padding-inline: 10px;
+    font-size: 24px;
+    color: var(--color-text-primary);
+    text-align: center;
+  }
+
+  &__description {
+    @extend %text-body;
+
+    display: none;
+    color: var(--color-text-secondary);
+    text-align: center;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__button {
+    @extend %text-uppercase;
+
+    display: none;
+
+    width: max-content;
+    padding: 20px 30px;
+    border: 1px solid var(--color-icon-border);
+    border-radius: 30px;
+
+    color: var(--color-text-primary);
+
+    transition: border-color $transition-duration-base ease-in-out;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    &:hover {
+      border-color: var(--color-element-border-hover);
+    }
+  }
+
+  &__img-container {
+    width: 100%;
+    height: 80%;
+
+    @include on-tablet {
+      width: 50%;
+      height: 100%;
+    }
+
+    @include on-desktop {
+      width: 60%;
+    }
+  }
+
+  &__img {
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

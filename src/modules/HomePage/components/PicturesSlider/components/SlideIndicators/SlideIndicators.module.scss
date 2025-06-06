@@ -1,0 +1,27 @@
+@use 'src/styles/utils' as *;
+
+.indicators {
+  grid-column: 1 / -1;
+
+  &__list {
+    display: flex;
+    column-gap: 4px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__button {
+    padding: 10px 5px;
+  }
+
+  &__rectangle {
+    width: 14px;
+    height: 4px;
+    background-color: var(--color-element-secondary);
+    transition: background-color $transition-duration-base ease-in-out;
+
+    &--active {
+      background-color: var(--color-element-primary);
+    }
+  }
+}

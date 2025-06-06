@@ -1,0 +1,16 @@
+@use 'src/styles/index' as *;
+
+body {
+  background-color: var(--color-bg);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+
+  & > main {
+    flex: 1;
+  }
+}
