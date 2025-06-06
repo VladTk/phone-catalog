@@ -11,8 +11,8 @@ Experience the live website: [Phone Catalog Demo](https://VladTk.github.io/phone
 ## Design Reference
 
 The project was built based on the following Figma designs:
-[Phone Catalog — Light Theme](https://www.figma.com/design/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog--V2--Original)
-[Phone Catalog — Dark Theme](https://www.figma.com/design/BUusqCIMAWALqfBahnyIiH/Phone-catalog--V2--Original-Dark)
+- [Phone Catalog — Light Theme](https://www.figma.com/design/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog--V2--Original)
+- [Phone Catalog — Dark Theme](https://www.figma.com/design/BUusqCIMAWALqfBahnyIiH/Phone-catalog--V2--Original-Dark)
 
 ## Technologies Used
 
