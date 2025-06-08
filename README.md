@@ -50,7 +50,7 @@ Follow these steps to run the project locally:
 
 ```bash
 git clone https://github.com/VladTk/phone-catalog.git
-cd project-name
+cd phone-catalog
 ```
 
 ### 2. Install dependencies
